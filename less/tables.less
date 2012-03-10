@@ -66,7 +66,7 @@ table {
   border: 1px solid #ddd;
   border-collapse: separate; // Done so we can round those corners!
   *border-collapse: collapsed; // IE7 can't round corners anyway
-  .border-radius(4px);
+  .border-radius(2px);
   th + th,
   td + td,
   th + td,
@@ -82,20 +82,20 @@ table {
   // For first th or td in the first row in the first thead or tbody
   thead:first-child tr:first-child th:first-child,
   tbody:first-child tr:first-child td:first-child {
-    .border-radius(4px 0 0 0);
+    .border-radius(2px 0 0 0);
   }
   thead:first-child tr:first-child th:last-child,
   tbody:first-child tr:first-child td:last-child {
-    .border-radius(0 4px 0 0);
+    .border-radius(0 2px 0 0);
   }
   // For first th or td in the first row in the first thead or tbody
   thead:last-child tr:last-child th:first-child,
   tbody:last-child tr:last-child td:first-child {
-    .border-radius(0 0 0 4px);
+    .border-radius(0 0 0 2px);
   }
   thead:last-child tr:last-child th:last-child,
   tbody:last-child tr:last-child td:last-child {
-    .border-radius(0 0 4px 0);
+    .border-radius(0 0 2px 0);
   }
 }
 
@@ -110,17 +110,6 @@ table {
     tr:nth-child(odd) th {
       background-color: #f9f9f9;
     }
-  }
-}
-
-
-// HOVER EFFECT
-// ------------
-// Placed here since it has to come after the potential zebra striping
-.table {
-  tbody tr:hover td,
-  tbody tr:hover th {
-    background-color: #f5f5f5;
   }
 }
 

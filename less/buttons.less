@@ -10,17 +10,19 @@
   display: inline-block;
   padding: 4px 10px 4px;
   margin-bottom: 0; // For input.btn
-  font-size: @baseFontSize;
+  font-size: @baseFontSize - 1px;
+  font-weight: bold;
   line-height: @baseLineHeight;
-  color: @grayDark;
+  color: @gray;
   text-align: center;
   text-shadow: 0 1px 1px rgba(255,255,255,.75);
   vertical-align: middle;
-  .buttonBackground(@white, darken(@white, 10%));
+  .buttonBackground(darken(@white, 3%), darken(@white, 7%));
   border: 1px solid #ccc;
   border-bottom-color: #bbb;
-  .border-radius(4px);
-  @shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  
+  .border-radius(2px);
+  @shadow: 0 1px 2px rgba(0,0,0,.02);
   .box-shadow(@shadow);
   cursor: pointer;
 
@@ -31,10 +33,13 @@
 
 // Hover state
 .btn:hover {
-  color: @grayDark;
+  color: @gray;
   text-decoration: none;
-  background-color: darken(@white, 10%);
-  background-position: 0 -15px;
+  .gradientBar(darken(@white, 1%), darken(@white, 7%));
+  border: 1px solid #aaa;
+  border-bottom-color: #999;
+  @shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 2px 3px rgba(0,0,0,.15);
+  .box-shadow(@shadow);
 
   // transition is only when going to hover, otherwise the background
   // behind the gradient (there for IE<=9 fallback) gets mismatched
@@ -50,7 +55,7 @@
 .btn.active,
 .btn:active {
   background-image: none;
-  @shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+  @shadow: inset 0 2px 3px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.15);
   .box-shadow(@shadow);
   background-color: darken(@white, 10%);
   background-color: darken(@white, 15%) e("\9");
@@ -63,6 +68,8 @@
   cursor: default;
   background-image: none;
   background-color: darken(@white, 10%);
+  border: 1px solid #ccc;
+  border-bottom-color: #bbb;
   .opacity(65);
   .box-shadow(none);
 }
@@ -76,7 +83,7 @@
   padding: 9px 14px;
   font-size: @baseFontSize + 2px;
   line-height: normal;
-  .border-radius(5px);
+  .border-radius(3 px);
 }
 .btn-large [class^="icon-"] {
   margin-top: 1px;
@@ -133,27 +140,27 @@
 // Set the backgrounds
 // -------------------------
 .btn-primary {
-  .buttonBackground(@primaryButtonBackground, spin(@primaryButtonBackground, 20));
+  .buttonBackground(lighten(@primaryButtonBackground, 10%), @primaryButtonBackground);
 }
 // Warning appears are orange
 .btn-warning {
-  .buttonBackground(lighten(@orange, 15%), @orange);
+  .buttonBackground(lighten(@orange, 10%), @orange);
 }
 // Danger and error appear as red
 .btn-danger {
-  .buttonBackground(#ee5f5b, #bd362f);
+  .buttonBackground(lighten(#bd362f, 10%), #bd362f);
 }
 // Success appears as green
 .btn-success {
-  .buttonBackground(#62c462, #51a351);
+  .buttonBackground(lighten(#51a351, 10%), #51a351);
 }
 // Info appears as a neutral blue
 .btn-info {
-  .buttonBackground(#5bc0de, #2f96b4);
+  .buttonBackground(lighten(#2f96b4, 10%), #2f96b4);
 }
 // Inverse appears as dark gray
 .btn-inverse {
-  .buttonBackground(#454545, #262626);
+  .buttonBackground(lighten(#262626, 10%), #262626);
 }
 
 

@@ -15,7 +15,7 @@
 @black:                 #000;
 @grayDarker:            #222;
 @grayDark:              #333;
-@gray:                  #555;
+@gray:                  #666;
 @grayLight:             #999;
 @grayLighter:           #eee;
 @white:                 #fff;
@@ -32,12 +32,12 @@
 
 // Typography
 @baseFontSize:          13px;
-@baseFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+@baseFontFamily:        "Open Sans", Arial, sans-serif;
 @baseLineHeight:        18px;
 @textColor:             @grayDark;
 
 // Buttons
-@primaryButtonBackground:    @linkColor;
+@primaryButtonBackground:    darken(@linkColor, 3%);
 
 
 
@@ -66,28 +66,28 @@
 
 // Navbar
 @navbarHeight:                    40px;
-@navbarBackground:                @grayDarker;
-@navbarBackgroundHighlight:       @grayDark;
+@navbarBackgroundHighlight:       #08c;
+@navbarBackground:                lighten(@navbarBackgroundHighlight, 3%);
 @navbarLinkBackgroundHover:       transparent;
 
-@navbarText:                      @grayLight;
-@navbarLinkColor:                 @grayLight;
+@navbarText:                      lighten(@navbarBackground, 40%);
+@navbarLinkColor:                 @navbarText;
 @navbarLinkColorHover:            @white;
 
 // Form states and alerts
-@warningText:             #c09853;
+@warningText:             darken(#c09853, 10%);
 @warningBackground:       #fcf8e3;
 @warningBorder:           darken(spin(@warningBackground, -10), 3%);
 
-@errorText:               #b94a48;
+@errorText:               darken(#b94a48, 10%);
 @errorBackground:         #f2dede;
 @errorBorder:             darken(spin(@errorBackground, -10), 3%);
 
-@successText:             #468847;
+@successText:             darken(#468847, 10%);
 @successBackground:       #dff0d8;
 @successBorder:           darken(spin(@successBackground, -10), 5%);
 
-@infoText:                #3a87ad;
+@infoText:                darken(#3a87ad, 10%);
 @infoBackground:          #d9edf7;
 @infoBorder:              darken(spin(@infoBackground, -10), 7%);
 
